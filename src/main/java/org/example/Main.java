@@ -1,7 +1,5 @@
 package org.example;
 
-import javafx.util.Pair;
-
 public class Main {
     public static String fizzBuzzCheck(int n) {
         if (n % 5 == 0 && n % 7 == 0) {
