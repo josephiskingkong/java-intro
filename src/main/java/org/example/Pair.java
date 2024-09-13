@@ -24,4 +24,8 @@ public class Pair<K, V> {
     public void setValue(V value) {
         this.value = value;
     }
+
+    public boolean equals(Object o){
+        return getClass() == o.getClass();
+    }
 }

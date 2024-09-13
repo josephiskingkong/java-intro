@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
-
     @Test
     void reverseString() {
         String str = "make install";
@@ -19,7 +18,7 @@ class MainTest {
 
     @Test
     void solveQuadraticEquation() {
-        assertEquals(new Pair<Double, Double>(2.0, 1.0), Main.solveQuadraticEquation(1, -3, 2));
+        assertEquals(new Pair<>(2.0, 1.0), Main.solveQuadraticEquation(1, -3, 2));
     }
 
     @Test
