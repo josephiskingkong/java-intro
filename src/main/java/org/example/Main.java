@@ -1,7 +1,8 @@
 package org.example;
 
-public class Main {
+import javafx.util.Pair;
 
+public class Main {
     public static String fizzBuzzCheck(int n) {
         if (n % 5 == 0 && n % 7 == 0) {
             return "fizzbuzz";
@@ -43,17 +44,17 @@ public class Main {
         return true;
     }
 
-    public static String solveQuadraticEquation(double a, double b, double c) {
+    public static Pair<Double, Double> solveQuadraticEquation(double a, double b, double c) {
         double discriminant = b * b - 4 * a * c;
         if (discriminant > 0) {
             double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
             double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            return "Корни уравнения: " + root1 + " и " + root2;
+            return new Pair<>(root1, root2);
         } else if (discriminant == 0) {
             double root = -b / (2 * a);
-            return "Один корень: " + root;
+            return new Pair<>(root, root);
         } else {
-            return "Нет вещественных корней.";
+            throw new IllegalArgumentException("Нету корней");
         }
     }
 
@@ -80,8 +81,10 @@ public class Main {
         String testPalindrome = "radar";
         System.out.println("Палиндром ли строка '" + testPalindrome + "'? " + isPalindrome(testPalindrome));
 
+        // x^2 - 3x + 2 = 0
         double a = 1, b = -3, c = 2;
-        System.out.println(solveQuadraticEquation(a, b, c));
+        Pair<Double, Double> solution = solveQuadraticEquation(a, b, c);
+        System.out.println("Корни уравнения: " + solution.getKey() + " и " + solution.getValue());
 
         double seriesSum = calculateSumOfSeries();
         System.out.println("Сумма ряда: " + seriesSum);

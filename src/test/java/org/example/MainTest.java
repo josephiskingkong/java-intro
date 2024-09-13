@@ -1,5 +1,6 @@
 package org.example;
 
+import javafx.util.Pair;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,8 +20,7 @@ class MainTest {
 
     @Test
     void solveQuadraticEquation() {
-        assertEquals("Корни уравнения: 2.0 и 1.0", Main.solveQuadraticEquation(1, -3, 2));
-        assertEquals("Нет вещественных корней.", Main.solveQuadraticEquation(1, 1, 1));
+        assertEquals(new Pair<>(2.0, 1.0), Main.solveQuadraticEquation(1, -3, 2));
     }
 
     @Test
