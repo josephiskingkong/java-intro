@@ -49,10 +49,10 @@ public class Main {
         if (discriminant > 0) {
             double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
             double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-            return new Pair<>(root1, root2);
+            return new Pair<Double, Double>(root1, root2);
         } else if (discriminant == 0) {
             double root = -b / (2 * a);
-            return new Pair<>(root, root);
+            return new Pair<Double, Double>(root, root);
         } else {
             throw new IllegalArgumentException("Нету корней");
         }
